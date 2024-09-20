@@ -3,7 +3,7 @@ name: Activity CI Job
 on:
   push:
     branches:
-      - main 
+      - main
 
   pull_request:
     branches:
@@ -16,6 +16,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Install packages
         run: npm install
