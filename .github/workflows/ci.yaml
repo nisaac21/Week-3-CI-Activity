@@ -24,4 +24,15 @@ jobs:
         run: npm install
 
       - name: Run all tests
-        run: npm test
+        run: |
+          mkdir -p test-results
+          npm test > test-results/results.txt
+
+      - name: Zip test results
+        run: zip -r test_results.zip test-results
+
+      - name: Upload test results artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: test_results
+          path: test_results.zip
