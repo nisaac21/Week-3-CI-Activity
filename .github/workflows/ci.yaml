@@ -1,18 +1,17 @@
 name: Activity CI Job
 
 on:
-  commit:
+  push:
     branches:
       - main 
 
-on:
-  pull:
+  pull_request:
     branches:
-      - main 
+      - main
 
 
 jobs:
-  install:
+  build:
 
     runs-on: ubuntu-latest
 
@@ -20,3 +19,6 @@ jobs:
 
       - name: Install packages
         run: npm install
+
+      - name: Run all tests
+        run: npm test
