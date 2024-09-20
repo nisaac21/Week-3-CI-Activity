@@ -14,9 +14,9 @@ on:
 jobs:
   install:
 
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-  steps:
+    steps:
 
-    - name: Install packages
-      run: npm install
+      - name: Install packages
+        run: npm install
