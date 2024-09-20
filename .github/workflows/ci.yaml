@@ -1,0 +1,22 @@
+name: Activity CI Job
+
+on:
+  commit:
+    branches:
+      - main 
+
+on:
+  pull:
+    branches:
+      - main 
+
+
+jobs:
+  install:
+
+  runs-on: ubuntu-latest
+
+  steps:
+
+    - name: Install packages
+      run: npm install
